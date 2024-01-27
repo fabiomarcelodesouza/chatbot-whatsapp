@@ -1,0 +1,48 @@
+{
+    "event": "messages.upsert", 
+    "instance": "glowz", 
+    "data": 
+    {
+        "key": 
+        {
+            "remoteJid": "5511956582460@s.whatsapp.net", 
+            "fromMe": False, 
+            "id": "3AA79BDF3107CF132C2A"
+        }, 
+        "pushName": "Fabio Souza", 
+        "message": 
+        {
+            "audioMessage": 
+            {
+                "url": "https: //mmg.whatsapp.net/v/t62.7117-24/30913595_888184696098918_8066353678035874286_n.enc?ccb=11-4&oh=01_AdQGOdeYR0dniWJCZmCduZ6qV-_drTAjyukD4quZPVrDPQ&oe=65DB890D&_nc_sid=5e03e0&mms3=true", 
+                "mimetype": "audio/ogg; codecs=opus", 
+                "fileSha256": "+jxiYAFF/67rVythsPnSxAI0t3bieF59JhAHfCw+8Ac=", 
+                "fileLength": "4081", 
+                "seconds": 1, 
+                "ptt": True, 
+                "mediaKey": "Shzlmp36aRVtp1mCQhQY000LoNUN9Js02ei6ysAcmbs=", 
+                "fileEncSha256": "leUPRLPFuFtIYG2KtLKhgIF93vF7KEMRXUNVDl2ER1M=", 
+                "directPath": "/v/t62.7117-24/30913595_888184696098918_8066353678035874286_n.enc?ccb=11-4&oh=01_AdQGOdeYR0dniWJCZmCduZ6qV-_drTAjyukD4quZPVrDPQ&oe=65DB890D&_nc_sid=5e03e0", 
+                "mediaKeyTimestamp": "1706297447", 
+                "streamingSidecar": "YpyTC5dLuJ5BvQ==", 
+                "waveform": "BQYHCAkKCwsLCwsLCwsKCgkJCQkJCQkJCQoKCwsRIDA/T15iYF5bWVdRS0U/ODY+Rk9XX2RkZGRkZGNjY2NjYw=="
+            },
+            "messageContextInfo": 
+            {
+                "deviceListMetadata": 
+                {
+                    "senderKeyHash": 
+                    "Qt5WkI2roiJIvQ==", 
+                    "senderTimestamp": 
+                    "1706267931", 
+                    "recipientKeyHash": "pybf5AFq8j4UdQ==", 
+                    "recipientTimestamp": "1706284300"
+                }, 
+                "deviceListMetadataVersion": 2
+            }
+        }, 
+        "messageTimestamp": 1706297450, 
+        "owner": "554332930605@s.whatsapp.net", 
+        "source": "ios"
+    }
+}

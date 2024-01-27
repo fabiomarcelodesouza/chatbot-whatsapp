@@ -1,0 +1,47 @@
+{
+    "object": "whatsapp_business_account", 
+    "entry": 
+    [
+        {
+            "id": "185160024677985", 
+            "changes": 
+            [
+                {
+                    "value": 
+                    {
+                        "messaging_product": "whatsapp", 
+                        "metadata": 
+                        {
+                            "display_phone_number": "15550623925", 
+                            "phone_number_id": "189700394221184"
+                        }, 
+                        "contacts": 
+                        [
+                            {
+                                "profile": 
+                                {
+                                    "name": "Fabio Souza"
+                                }
+                                , "wa_id": "5511956582460"
+                            }
+                        ], 
+                        "messages": 
+                        [
+                            {
+                                "from": "5511956582460", 
+                                "id": "wamid.HBgNNTUxMTk1NjU4MjQ2MBUCABIYFDNBMEE4ODBCNTQzNzlCRkUzMzRCAA==", 
+                                "timestamp": "1706293221", 
+                                "text": 
+                                {
+                                    "body": "Oi"
+                                },
+                                "type": "text"
+                            }
+                        ]
+                    }, 
+                    "field": "messages"
+                }
+            ]
+        }
+    ]
+}

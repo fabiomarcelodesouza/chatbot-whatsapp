@@ -1,0 +1,32 @@
+{
+    "event": "messages.upsert", 
+    "instance": "glowz", 
+    "data": 
+    { 
+        "key": 
+        { 
+            "remoteJid": "5511956582460@s.whatsapp.net", 
+            "fromMe": False, 
+            "id": "3AA688813EF612A0A7F4"
+        }, 
+        "pushName": "Fabio Souza",  
+        "message":   
+        {     
+            "conversation": "Oi",    
+            "messageContextInfo":   
+            {
+                "deviceListMetadata":   
+                {
+                    "senderKeyHash": "Qt5WkI2roiJIvQ==", 
+                    "senderTimestamp": "1706267931", 
+                    "recipientKeyHash": "pybf5AFq8j4UdQ==", 
+                    "recipientTimestamp": "1706284300"
+                }, 
+                "deviceListMetadataVersion": 2
+            }
+        }, 
+        "messageTimestamp": 1706292824, 
+        "owner": "554332930605@s.whatsapp.net", 
+        "source": "ios"
+    }
+}
