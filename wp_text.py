@@ -7,6 +7,8 @@ import requests
 # Obtendo o token do WhatsApp a partir das variáveis de ambiente
 whatsapp_token = os.environ["API_KEY_WHATSAPP"]
 USE_OFICIAL_API = os.environ["USE_OFICIAL_API"]
+API_ADDRESS = os.environ["API_ADDRESS"]
+INSTANCE = os.environ["INSTANCE"]
 
 # Função para enviar a resposta como uma mensagem no WhatsApp de volta para o usuário
 def send_whatsapp_message(body, message):
@@ -46,7 +48,8 @@ def build_api_call(body, message):
         }
     else:
         from_number = body["data"]["key"]["remoteJid"] 
-        url = "http://34.207.144.109/message/sendText/glowz"
+        url = f"{API_ADDRESS}/message/sendText/{INSTANCE}"
+        print(url)
 
         # Definindo os cabeçalhos para autenticação e tipo de conteúdo
         headers = {
