@@ -1,0 +1,43 @@
+{
+    "event": "messages.upsert",
+    "instance": "glowz",
+    "data": 
+    {
+        "key": 
+        {
+            "remoteJid": "554396732362@s.whatsapp.net",
+            "fromMe": False,
+            "id": "C960272817DC569CF1A9A8319D2BB421"
+        },
+        "pushName": "CIDA",
+        "message": 
+        {
+            "extendedTextMessage": 
+            {
+                "text": "Olá.  Tem horário para pé e mão amanhã?",
+                "previewType": "NONE",
+                "contextInfo": 
+                {
+                    "entryPointConversionSource": "contact_card",
+                    "entryPointConversionApp": "whatsapp",
+                    "entryPointConversionDelaySeconds": 32
+                },
+                "inviteLinkGroupTypeV2": "DEFAULT"
+            },
+            "messageContextInfo": 
+            {
+                "deviceListMetadata": 
+                {
+                    "senderKeyHash": "EqOjEQh11E4PmA==",
+                    "senderTimestamp": "1705709174",
+                    "recipientKeyHash": "UPlR/O1vGDNC1g==",
+                    "recipientTimestamp": "1706470668"
+                },
+                "deviceListMetadataVersion": 2
+            }
+        },
+        "messageTimestamp": 1706476366,
+        "owner": "554332930605@s.whatsapp.net",
+        "source": "android"
+    }
+}

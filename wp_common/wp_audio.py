@@ -3,7 +3,7 @@ import pydub
 import io
 import soundfile as sf
 import speech_recognition as sr
-import wp_media
+import wp_common.wp_media as wp_media
 import langid
 
 # Idioma padrão para reconhecimento de fala para texto

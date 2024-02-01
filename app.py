@@ -1,6 +1,13 @@
+import os
 from flask import Flask, request
-import wp_tools
-import wp_handle
+from dotenv import load_dotenv
+load_dotenv()
+import wp_common.wp_tools as wp_tools
+API_OFICIAL = os.environ["USE_OFICIAL_API"]
+if API_OFICIAL == True:
+    import wp_api_oficial.wp_handle as wp_handle
+else:
+    import wp_api_codechat.wp_handle as wp_handle
 
 app = Flask(__name__)
 
