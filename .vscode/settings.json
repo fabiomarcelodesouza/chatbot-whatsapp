@@ -1,5 +1,5 @@
 {
     "python.analysis.extraPaths": [
-        "./wp_common"
+        "./model"
     ]
 }

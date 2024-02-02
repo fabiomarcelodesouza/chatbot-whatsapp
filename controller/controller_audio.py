@@ -3,7 +3,7 @@ import pydub
 import io
 import soundfile as sf
 import speech_recognition as sr
-import wp_common.wp_media as wp_media
+import controller_media as c_media
 import langid
 
 # Idioma padrão para reconhecimento de fala para texto
@@ -35,10 +35,10 @@ def recognize_audio(audio_bytes):
 
 # Função para lidar com mensagens de áudio
 def handle_audio_message(audio_id):
-    # Obter a URL da mídia para o arquivo de áudio usando o módulo wp_media
-    audio_url = wp_media.get_media_url(audio_id)
-    # Baixar o arquivo de áudio usando o módulo wp_media
-    audio_bytes = wp_media.download_media_file(audio_url)
+    # Obter a URL da mídia para o arquivo de áudio usando o módulo cmedia
+    audio_url = c_media.get_media_url(audio_id)
+    # Baixar o arquivo de áudio usando o módulo cmedia
+    audio_bytes = c_media.download_media_file(audio_url)
     # Converter os bytes de áudio baixados para dados de áudio
     audio_data = convert_audio_bytes(audio_bytes)   
     # Reconhecer o texto dos dados de áudio

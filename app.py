@@ -2,13 +2,11 @@ import os
 from flask import Flask, request
 from dotenv import load_dotenv
 load_dotenv()
-import wp_common.wp_tools as wp_tools
-API_OFICIAL = os.environ["USE_OFICIAL_API"]
-if API_OFICIAL == True:
-    import wp_api_oficial.wp_handle as wp_handle
-else:
-    import wp_api_codechat.wp_handle as wp_handle
+import controller.controller_tools as c_tools
+import controller.controller_handle2 as c_handle
+import controller.abobora as abobora
 
+print(abobora.vairtomarnocu())
 app = Flask(__name__)
 
 # Sets homepage endpoint and welcome message
@@ -20,9 +18,9 @@ def home():
 @app.route("/webhook", methods=["POST", "GET"]) 
 def webhook(): 
     if request.method == "GET":
-        return wp_tools.verify_webhook(request)
+        return c_tools.verify_webhook(request)
     elif request.method == "POST":
-        return wp_handle.handle_message(request)
+        return c_handle.handle_message(request)
  
 # Route to reset message log
 @app.route("/reset", methods=["GET"])

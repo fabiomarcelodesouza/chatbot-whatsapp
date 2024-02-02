@@ -1,0 +1,18 @@
+{
+    "key": 
+    {
+        "remoteJid": "5511956582460@s.whatsapp.net",
+        "fromMe": True,
+        "id": "BAE58C9B0665A07D"
+    },
+    "message": 
+    {
+        "extendedTextMessage": 
+        {
+            "text": "Olá! Bem-vindo(a) ao Glowz Beauty Lounge! Somos um salão de beleza incrível, especializado em proporcionar experiências únicas de cuidados com a beleza. Como posso te ajudar hoje? \n        \n1 - Agendar um procedimento. \n2 - Conversar sobre dicas de beleza. \n3 - Falar com uma atendente humana.",
+            "contextInfo": {}
+        }
+    },
+    "messageTimestamp": "1706883489",
+    "status": "PENDING"
+}

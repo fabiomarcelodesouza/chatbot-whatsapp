@@ -50,7 +50,7 @@ def make_openai_request(message, from_number):
         )
         # Obter a resposta gerada pelo modelo
         response_message = response.choices[0].message.content
-        print(f"Resposta do OpenAI: {response_message}")
+        print(f"Resposta do OpenAI: {response.choices[0].message.content}")
         # Atualizar o log de mensagens com a resposta do assistente
         update_message_log(response_message, from_number, "assistant")
     except Exception as e:
