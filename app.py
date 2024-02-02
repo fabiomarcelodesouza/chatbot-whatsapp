@@ -3,10 +3,8 @@ from flask import Flask, request
 from dotenv import load_dotenv
 load_dotenv()
 import controller.controller_tools as c_tools
-import controller.controller_handle2 as c_handle
-import controller.abobora as abobora
+import controller.controller_handle as c_handle
 
-print(abobora.vairtomarnocu())
 app = Flask(__name__)
 
 # Sets homepage endpoint and welcome message

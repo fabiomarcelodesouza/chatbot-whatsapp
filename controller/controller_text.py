@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 load_dotenv()
 import os
 import requests
-import controller_json as c_json
+import controller.controller_json as c_json
 
 # Obtendo o token do WhatsApp a partir das variáveis de ambiente
 whatsapp_token = os.environ["API_KEY_WHATSAPP"]

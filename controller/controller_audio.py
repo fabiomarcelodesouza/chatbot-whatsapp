@@ -3,7 +3,7 @@ import pydub
 import io
 import soundfile as sf
 import speech_recognition as sr
-import controller_media as c_media
+import controller.controller_media as c_media
 import langid
 
 # Idioma padrão para reconhecimento de fala para texto

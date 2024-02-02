@@ -2,10 +2,9 @@
 import os
 import random
 from flask import jsonify
-#import controller_json as c_json
-#import controller_json as c_json
-
-from model import database as database
+import controller.controller_json as c_json
+import controller.controller_text as c_text
+import model.database as database
 
 # Dicionário de log de mensagens para permitir conversação ao longo de várias mensagens
 message_log_dict = {}
@@ -37,22 +36,21 @@ def handle_message(request):
 def handle_whatsapp_message(body):
     # Obter a mensagem do corpo da requisição
     if body.get("event") == "messages.upsert":
-       # conversation, phone_number = c_json.handle_received_json(body)
+        conversation, phone_number = c_json.handle_received_json(body)
         phone_number = phone_number.replace('@s.whatsapp.net', '')
         nome_cliente, status = database.identifica_cliente(phone_number)        
         cliente_identificado = status == 200 
 
-        #c_json.update_message_log("jj", phone_number, "role", message_log_dict)
-
+        c_json.update_message_log("jj", phone_number, "role", message_log_dict)
         
         print(f'Dicionario de log de mensagens: {message_log_dict}')
 
         lista_saudacoes = database.obtem_mensagens_saudacao(cliente_identificado=cliente_identificado)[0]
         saudacao = random.choice(lista_saudacoes)[0].replace("[nome_cliente]", nome_cliente)            
         
-        #c_text.send_whatsapp_message(body, saudacao)
+        c_text.send_whatsapp_message(body, saudacao)
 
-        # if cliente_identificado:            
+        #if cliente_identificado:            
 
 
 
