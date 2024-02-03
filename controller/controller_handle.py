@@ -1,4 +1,5 @@
 # Importando bibliotecas necessárias
+import json
 import os
 import random
 from flask import jsonify
@@ -13,7 +14,7 @@ message_log_dict = {}
 def handle_message(request):
     # Analisar o corpo da requisição no formato json
     body = request.get_json()
-
+    
     try:
         if body.get("event") == "messages.upsert":
             if (
@@ -36,21 +37,29 @@ def handle_message(request):
 def handle_whatsapp_message(body):
     # Obter a mensagem do corpo da requisição
     if body.get("event") == "messages.upsert":
-        conversation, phone_number = c_json.handle_received_json(body)
+        conversation, phone_number = c_json.handle_received_message(body)
         phone_number = phone_number.replace('@s.whatsapp.net', '')
-        nome_cliente, status = database.identifica_cliente(phone_number)        
-        cliente_identificado = status == 200 
-
-        c_json.update_message_log("jj", phone_number, "role", message_log_dict)
         
-        print(f'Dicionario de log de mensagens: {message_log_dict}')
-
-        lista_saudacoes = database.obtem_mensagens_saudacao(cliente_identificado=cliente_identificado)[0]
-        saudacao = random.choice(lista_saudacoes)[0].replace("[nome_cliente]", nome_cliente)            
+        # Inicio de conversa              
+        if phone_number not in message_log_dict:        
+            c_text.inicia_atendimento(body, conversation, phone_number, message_log_dict)
         
-        c_text.send_whatsapp_message(body, saudacao)
+        # Conversa inciada e usuario não identificado
+        elif message_log_dict[phone_number]["status"] == "iniciado":
+            c_text.cadastra_usario(body, conversation, phone_number, message_log_dict, "iniciando_cadastro")
+            print(f'ABOBORAAAAAAAAAAAAAAA       {message_log_dict[phone_number]["status"]}')
 
-        #if cliente_identificado:            
+        # Conversa inciada, usuario não identificado e esta em processo de confirmacao do cadastro
+        elif (message_log_dict[phone_number]["status"] == "iniciando_cadastro" or
+              message_log_dict[phone_number]["status"] == "confirmando_cadastro"):
+            print(f'ABOBORAAAAAAAAAAAAAAA       {message_log_dict[phone_number]["status"]}')
+            c_text.cadastra_usario(body, conversation, phone_number, message_log_dict, "confirmando_cadastro")        
+
+        
+        
+
+
+       # if cliente_identificado:            
 
 
 

@@ -25,7 +25,7 @@ def identifica_cliente(phone_number):
         registros_encontrados = len(registros)         
 
         if registros_encontrados == 0:
-            retorno, status = "Cliente não encontrado", 404
+            retorno, status = "", 404
         elif registros_encontrados > 1:
             retorno, status = f'Foram encontrados {registros_encontrados} registros para o cliente {phone_number}.', 409
         else:
@@ -48,6 +48,39 @@ def obtem_mensagens_saudacao(cliente_identificado):
     try:
         cursor.execute(f"select descricao_mensagem from mensagem where id_mensagem_categoria = {id_mensagem_categoria}")
         retorno = cursor.fetchall()
+        status = 200
+    except psycopg2.Error as e:
+        retorno, status = f"Erro ao realizar a consulta: {e}", 500        
+
+    cursor.close()
+    conn.close()
+
+    return retorno, status
+
+def obtem_mensagens_confirmacao_cadastro():
+    conn = database_connection()[0]
+    cursor = conn.cursor()
+
+    try:
+        cursor.execute(f"select descricao_mensagem from mensagem where id_mensagem_categoria = 3")
+        retorno = cursor.fetchall()
+        status = 200
+    except psycopg2.Error as e:
+        retorno, status = f"Erro ao realizar a consulta: {e}", 500        
+
+    cursor.close()
+    conn.close()
+
+    return retorno, status
+
+def cadastrar_cliente(nome_cliente, phone_number):
+    conn = database_connection()[0]
+    cursor = conn.cursor()
+
+    try:
+        cursor.execute(f"INSERT INTO cliente (nome, phone_number) VALUES (%s, %s)", (nome_cliente, phone_number))
+        conn.commit()  # É necessário fazer commit após a inserção
+        retorno = "Cliente cadastrado com sucesso"
         status = 200
     except psycopg2.Error as e:
         retorno, status = f"Erro ao realizar a consulta: {e}", 500        
