@@ -8,7 +8,7 @@
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
+            "program": "C:\\GIT\\fabiomarcelodesouza\\chatbot-whatsapp\\app.py",
             "console": "integratedTerminal",
             "justMyCode": true
         }

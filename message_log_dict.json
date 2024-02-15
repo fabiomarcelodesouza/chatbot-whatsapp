@@ -1,1 +1,20 @@
-{"5511956582460": {"status": "cadastro_confirmado", "nome_cliente": "1", "messages": [{"role": "system", "content": "Voc\u00ea \u00e9 a Bela, assistente virtual do sal\u00e3o de beleza chamado Glowz Beauty Lounge"}, {"role": "user", "content": "Oi"}, {"role": "assistant", "content": "Ol\u00e1, sou a Bela, sua assistente virtual na Glowz Beauty Lounge! \n\nEstou aqui para tornar sua experi\u00eancia ainda mais incr\u00edvel. \n\nSabia que agora voc\u00ea pode agendar seu atendimento facilmente pelo nosso app? \ud83d\ude0a Basta clicar em https://tubi855.gendo.app. \n\nComo \u00e9 seu primeiro contato conosco, por favor, me informe o seu nome completo para que eu possa continuar com seu atendimento! \ud83d\ude0a"}, {"role": "user", "content": "Fabio"}, {"role": "assistant", "content": "Confirmando, seu nome completo \u00e9 Fabio, est\u00e1 certo?\n\n1 - Sim\n2 - N\u00e3o"}, {"role": "user", "content": "1"}, {"role": "assistant", "content": "Perfeito 1, agora que j\u00e1 nos conhecemos, em que posso te ajudar?"}]}}
+{
+    "5511956582460": {
+        "status": "iniciado",
+        "nome_cliente": "",
+        "messages": [
+            {
+                "role": "system",
+                "content": "Voc\u00ea \u00e9 a Bela, assistente virtual do sal\u00e3o de beleza chamado Glowz Beauty Lounge"
+            },
+            {
+                "role": "user",
+                "content": "Que?\ud83d\ude10"
+            },
+            {
+                "role": "assistant",
+                "content": "Ol\u00e1, sou a Bela, sua assistente virtual na Glowz Beauty Lounge! \n\nEstou aqui para tornar sua experi\u00eancia ainda mais incr\u00edvel. \n\nSabia que agora voc\u00ea pode agendar seu atendimento facilmente pelo nosso app? \ud83d\ude0a Basta clicar em https://tubi855.gendo.app. \n\nComo \u00e9 seu primeiro contato conosco, por favor, me informe o seu nome completo para que eu possa continuar com seu atendimento! \ud83d\ude0a"
+            }
+        ]
+    }
+}
