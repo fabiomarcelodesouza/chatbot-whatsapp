@@ -6,6 +6,7 @@ class VariaveisAmbienteController:
     def __init__(self):
         self._API_ADDRESS = os.environ["API_ADDRESS"]
         self._API_KEY_WHATSAPP = os.environ["API_KEY_WHATSAPP"]
+        self._API_KEY_OPENAI = os.environ["API_KEY_OPENAI"]
         self._INSTANCE = os.environ["INSTANCE"]
         self._DBNAME = os.environ["DBNAME"]
         self._DBUSER = os.environ["DBUSER"]
@@ -19,6 +20,10 @@ class VariaveisAmbienteController:
     @property
     def API_KEY_WHATSAPP(self):
         return self._API_KEY_WHATSAPP
+    
+    @property
+    def API_KEY_OPENAI(self):
+        return self._API_KEY_OPENAI
     
     @property
     def INSTANCE(self):

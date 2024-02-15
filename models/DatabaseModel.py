@@ -1,5 +1,6 @@
 import psycopg2
 from controllers.VariaveisAmbienteController import VariaveisAmbienteController
+from utils.Enums.StatusAtendimento import StatusAtendimento
 
 class DatabaseModel:
     def __init__(self):
@@ -52,9 +53,7 @@ class DatabaseModel:
 
         return retorno, status
 
-    def obtem_mensagens_saudacao(self, cliente_identificado):
-        id_mensagem_categoria = 1 if cliente_identificado else 2
-
+    def obtem_mensagens(self, status_atendimento):
         conn_info = DatabaseModel.database_connection()
         if conn_info[0] is None:  # Verifica se a conexão é None
             raise psycopg2.Error(conn_info[1])
@@ -63,27 +62,7 @@ class DatabaseModel:
 
         cursor = conn.cursor()
         try:
-            cursor.execute(f"select descricao_mensagem from mensagem where id_mensagem_categoria = {id_mensagem_categoria}")
-            retorno = cursor.fetchall()
-            status = 200
-        except psycopg2.Error as e:
-            retorno, status = f"Erro ao realizar a consulta - {e}", 500        
-
-        cursor.close()
-        conn.close()
-
-        return retorno, status
-
-    def obtem_mensagens_confirmacao_cadastro(self):
-        conn_info = DatabaseModel.database_connection()
-        if conn_info[0] is None:  # Verifica se a conexão é None
-            raise psycopg2.Error(conn_info[1])
-
-        conn, retorno, status = conn_info  # Desempacota a tupla
-
-        cursor = conn.cursor()
-        try:
-            cursor.execute(f"select descricao_mensagem from mensagem where id_mensagem_categoria = 3")
+            cursor.execute(f"select descricao_mensagem from mensagem where id_mensagem_categoria = {status_atendimento.value}")
             retorno = cursor.fetchall()
             status = 200
         except psycopg2.Error as e:

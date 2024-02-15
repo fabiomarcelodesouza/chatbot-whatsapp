@@ -6,14 +6,14 @@ class MessageLogController:
         pass
 
     # Função para criar ou atualizar o log de mensagens com a mensagem do usuário ou assistente
-    def update_message_log(self, message, phone_number, role, chat_status, nome_cliente, log_mensagens):
+    def update_message_log(self, message, phone_number, role, status_atendimento, nome_cliente, log_mensagens):
         # Criar um novo log de mensagem com o papel (usuário ou assistente) e conteúdo da mensagem
         message_log = {"role": role, "content": message}
         
         # Verifica se o número de telefone já está no dicionário
         if phone_number in log_mensagens:
             # Se já existir, atualiza o status e o nome
-            log_mensagens[phone_number]["status"] = chat_status
+            log_mensagens[phone_number]["status_atendimento"] = status_atendimento
             log_mensagens[phone_number]["nome_cliente"] = nome_cliente
             
             # Se já existir, adiciona a mensagem de log ao dicionário existente        
@@ -24,7 +24,7 @@ class MessageLogController:
 
             # Caso contrário, cria uma nova entrada no dicionário com o status e a mensagem de log
             log_mensagens[phone_number] = {
-                "status": chat_status,
+                "status_atendimento": status_atendimento,
                 "nome_cliente": nome_cliente,
                 "messages": [initial_log, message_log]
             }
