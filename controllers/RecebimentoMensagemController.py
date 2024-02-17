@@ -66,7 +66,7 @@ class RecebimentoMensagemController:
 
 
     def trata_json_recebido(self, body):
-        if body.get("event") == "messages.upsert":
+        if body.get("event") in {"messages.upsert", "chat.update"}:
             if (
                 body["data"]["message"].get("conversation")
                 or body["data"]["message"]["extendedTextMessage"].get("text")
